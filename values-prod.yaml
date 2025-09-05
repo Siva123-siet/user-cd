@@ -1,0 +1,11 @@
+deployment:
+  # imageURL: siva316/catalogue
+  imageURL: 097003440739.dkr.ecr.us-east-1.amazonaws.com/roboshop/catalogue
+  imageversion: IMAGE_VERSION
+hpa:
+  utilization: 75
+  minreplicas: 1
+  maxreplicas: 10
+configMap:
+  REDIS_URL: "redis://redis:6379" 
+  MONGO_URL: "mongodb://mongodb:27017/users"
