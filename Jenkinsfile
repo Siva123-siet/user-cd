@@ -63,7 +63,7 @@ pipeline {
        // API testing/Functional testing
         stage('Functional Testing'){
             when {
-                    expression { params.deploy_to = "dev" }
+                    expression { params.deploy_to == "dev" }
                 }
             steps{
                 script{
@@ -74,7 +74,7 @@ pipeline {
         // All components testing
         stage('Integration Testing'){
             when {
-                    expression { params.deploy_to = "qa" }
+                    expression { params.deploy_to == "qa" }
                 }
             steps{
                 script{
@@ -84,7 +84,7 @@ pipeline {
         }
         stage('Prod Deploy') {
             when {
-                    expression { params.deploy_to = "prod" }
+                    expression { params.deploy_to == "prod" }
                 }
             steps {
                 script {
