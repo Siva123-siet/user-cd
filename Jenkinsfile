@@ -60,7 +60,7 @@ pipeline {
         }
     }
  }
- }      // API testing/Functional testing
+       // API testing/Functional testing
         stage('Functional Testing'){
             when {
                     expression { params.deploy_to = "dev" }
@@ -100,6 +100,7 @@ pipeline {
                 }
             }
         }
+    }
     //post build
     post { 
         always { 
